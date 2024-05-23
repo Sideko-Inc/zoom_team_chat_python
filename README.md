@@ -12,7 +12,10 @@ Use either the synchronous or asynchronous client to authenticate
 from zoom_team_chat import Client
 from os import getenv
 
+# with a token
 Client(token=getenv("API_TOKEN"))
+# or fetch a token
+Client(account_id="1234", client_id="1234", client_secret="1234")
 ```
 
 ### Asynchronous Client
@@ -20,7 +23,10 @@ Client(token=getenv("API_TOKEN"))
 from zoom_team_chat import AsyncClient
 from os import getenv
 
+# with a token
 AsyncClient(token=getenv("API_TOKEN"))
+# or fetch a token
+AsyncClient(account_id="1234", client_id="1234", client_secret="1234")
 ```
 
 
