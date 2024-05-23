@@ -120,7 +120,7 @@ class SyncClientWrapper(BaseClientWrapper):
         request = remove_none_from_dict(request)
         response = self.httpx_client.request(
             method=method,
-            url=urllib.parse.urljoin(f"{self._base_url}/", path),
+            url=f"{self._base_url}{path}",
             **request,
             **request_options if request_options is not None else {},
         )
@@ -200,7 +200,7 @@ class AsyncClientWrapper(BaseClientWrapper):
         request = remove_none_from_dict(request)
         response = await self.httpx_client.request(
             method=method,
-            url=urllib.parse.urljoin(f"{self._base_url}/", path),
+            url=f"{self._base_url}{path}",
             **request,
             **request_options if request_options is not None else {},
         )
